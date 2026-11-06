@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JEE CBT Practice</title>
+<style>
+:root{--bg:#eceff3;--cd:#fff;--tx:#1d2733;--mu:#64707e;--bd:#ccd3dc;--pr:#1c6db5;--hd:#1c6db5;--nv:#d8dbe0;--na:#e04a30;--an:#3a9d5d;--mk:#6a45b5;--bt:#f3f5f8}
+:root.dark{--bg:#10151b;--cd:#1a212a;--tx:#e5e9ef;--mu:#95a1af;--bd:#323f4d;--pr:#4b9de3;--hd:#12385a;--nv:#38424f;--bt:#222b36}
+*{box-sizing:border-box}body{margin:0;font:15px/1.45 "Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--tx)}
+header{background:var(--hd);color:#fff;padding:10px 16px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:5}
+header h1{font-size:17px;margin:0;flex:1}#tm{font:600 18px ui-monospace,Consolas,monospace;background:rgba(0,0,0,.25);padding:3px 12px;border-radius:5px}
+button{font:inherit;cursor:pointer;border:1px solid var(--bd);background:var(--bt);color:var(--tx);padding:8px 14px;border-radius:5px}
+button:hover{border-color:var(--pr)}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--pr);outline-offset:1px}
+.pri{background:var(--pr);border-color:var(--pr);color:#fff}.dg{background:var(--na);border-color:var(--na);color:#fff}
+.wrap{max-width:1180px;margin:0 auto;padding:16px}.card{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:16px;margin-bottom:14px}
+label{display:block;margin:10px 0 3px;font-weight:600}small{color:var(--mu)}
+input,select,textarea{font:inherit;width:100%;padding:8px;border:1px solid var(--bd);border-radius:5px;background:var(--cd);color:var(--tx)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ex{display:grid;grid-template-columns:1fr 290px;gap:14px;align-items:start}
+.qb img{max-width:100%;background:#fff;border:1px solid var(--bd);border-radius:6px;display:block}
+.dark img.q{filter:invert(.92) hue-rotate(180deg)}
+.opts{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.opt{min-width:54px;font-weight:600}.opt.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pal{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.p{padding:8px 0;font-weight:600;border-radius:5px;position:relative;background:var(--nv);color:var(--tx);border:2px solid transparent}
+.p.s1{background:var(--na);color:#fff}.p.s2{background:var(--an);color:#fff}.p.s3,.p.s4{background:var(--mk);color:#fff;border-radius:50%}
+.p.s4::after{content:"";position:absolute;right:1px;bottom:1px;width:10px;height:10px;border-radius:50%;background:var(--an);border:1px solid #fff}
+.p.cur{border-color:var(--tx)}
+.lg{display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:13px;margin-bottom:10px}.lg i{display:inline-block;width:16px;height:16px;border-radius:4px;vertical-align:-3px;margin-right:5px;color:#fff;font-style:normal;font-size:11px;text-align:center}
+.key{display:grid;grid-template-columns:repeat(4,56px);gap:6px;margin-top:8px}.key button{padding:10px 0}
+#num{max-width:220px;font:600 18px ui-monospace,monospace}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}.stat{background:var(--bt);border-radius:8px;padding:10px 12px}.stat b{display:block;font-size:22px}
+table{width:100%;border-collapse:collapse}td,th{padding:6px 8px;border-bottom:1px solid var(--bd);text-align:left}tr.r{cursor:pointer}
+.ok{color:var(--an);font-weight:600}.no{color:var(--na);font-weight:600}.sk{color:var(--mu)}
+.tb{height:14px;border-radius:4px;display:inline-block;vertical-align:middle}
+@media(max-width:820px){.ex{grid-template-columns:1fr}.g2{grid-template-columns:1fr}}
+
+:root{--side:#dff1fb;--top:#333;--ti:#f3e35b}:root.dark{--side:#16232e;--top:#0b0e12;--ti:#e9d85a}
+header{background:var(--top)}header h1{color:var(--ti);font-size:15px;font-weight:600}#tm{background:none;color:#fff;font:600 15px "Segoe UI",sans-serif}
+.full{max-width:none!important;padding:0!important}.ex{gap:0;grid-template-columns:minmax(0,1fr) 300px;margin:0;min-height:calc(100vh - 46px)}.mainp{padding:14px 20px 90px;background:var(--cd)}
+.qinfo{display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:6px}.qno{margin:12px 0 10px;font-weight:600;font-size:14px}
+.mainp img.q{border:0;border-radius:0;max-width:100%;height:auto;display:block}.ans{margin-top:16px}
+.side{background:var(--side);padding:14px;align-self:stretch;border-left:1px solid var(--bd)}
+.sec{background:#1f7ab8;color:#fff;font-weight:600;padding:8px 10px;margin:14px -14px 0}.ch{margin:10px 0;font-size:13px;color:var(--mu)}
+.lg{font-size:12px;gap:10px 6px}.lg .sh{margin-right:6px}
+.sh,.p{display:inline-grid;place-items:center;width:30px;height:28px;font-size:12px;font-weight:600;color:#fff;border:0;padding:0;vertical-align:middle}
+.p{width:38px;height:36px;font-size:13px;margin:auto;border-radius:0;position:relative;transition:none}
+.pal{grid-template-columns:repeat(4,1fr);gap:10px 4px}
+.s0{background:#e3e3e3;color:#222;border:1px solid #b5b5b5;border-radius:3px}
+.s1{background:#e2501f;clip-path:polygon(0 0,100% 0,100% 72%,50% 100%,0 72%);border-radius:0}
+.s2{background:#5fb52f;clip-path:polygon(0 28%,50% 0,100% 28%,100% 100%,0 100%);border-radius:0}
+.s3,.s4{background:#7b4aa0;border-radius:50%!important;clip-path:none}.s4::after{content:"";position:absolute;right:1px;bottom:1px;width:11px;height:11px;border-radius:50%;background:#5fb52f;border:1px solid #fff}
+.s0,.p.s0{color:#222!important}.p.cur{transform:scale(1.14);filter:drop-shadow(0 0 3px #e8845a) brightness(1.12)}
+.subm{background:#187db3;border:0;color:#fff;padding:12px 38px;font-size:15px;font-weight:600;border-radius:3px}
+.foot{position:fixed;left:0;right:300px;bottom:0;background:var(--cd);border-top:1px solid var(--bd);padding:12px 16px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.foot button{border-radius:3px;background:var(--bt)}
+.opt.on{background:#1f7ab8;border-color:#1f7ab8}
+@media(max-width:820px){.ex{grid-template-columns:minmax(0,1fr)}.foot{right:0}.mainp{padding-bottom:110px}}
+</style></head><body>
+<header><h1>JEE CBT Practice</h1><span id="tm" hidden></span><button onclick="tg()" id="thm" aria-label="Toggle dark mode">Dark mode</button></header>
+<div class="wrap" id="app"></div>
+<script type="module">import*as p from"./lib/pdf.min.mjs";p.GlobalWorkerOptions.workerSrc="./lib/pdf.worker.min.mjs";window.pdfjsLib=p;dispatchEvent(new Event("pdfready"))</script>
+<script>
+const $=s=>document.querySelector(s),A=$('#app'),O=['A','B','C','D'];
+let S=null,iv=null;
+const ls=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){}};
+function theme(t){document.documentElement.classList.toggle('dark',t=='dark');$('#thm').textContent=t=='dark'?'Light mode':'Dark mode';ls('jt_theme',t)}
+function tg(){theme(document.documentElement.classList.contains('dark')?'light':'dark')}
+theme(ls('jt_theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+const fmt=s=>{s=Math.round(s);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
+const hist=()=>{try{return JSON.parse(ls('jt_hist')||'[]')}catch(e){return[]}};
+
+/* ---------- Setup ---------- */
+function setup(){
+ clearInterval(iv);S=null;$('#tm').hidden=true;
+ $('header h1').textContent='JEE CBT Practice';A.className='wrap';
+ const h=hist().slice().reverse().map(x=>`<tr><td>${x.name}</td><td>${x.date}</td><td>${x.score}/${x.max}</td><td>${x.co??'-'} / ${x.wr??'-'} / ${x.un??'-'}</td><td>${x.acc}%</td><td>${fmt(x.time)}</td></tr>`).join('');
+ A.innerHTML=`<div class="card"><h2 style="margin:0 0 4px">Create a test</h2><small>Upload your question PDF, pick the pages with questions, and paste the answer key.</small>
+ <label>PDF file</label><input type="file" id="file" accept="application/pdf">
+ <div class="g2"><div><label>Test name</label><input id="name" placeholder="Circular Motion - Exercise 1"></div>
+ <div><label>Question pages</label><input id="pages" placeholder="e.g. 2-3  (not the cover or answer page)"></div></div>
+ <div class="g2"><div><label>Option labels</label><select id="lab"><option value="A">A B C D</option><option value="1">1 2 3 4</option></select></div>
+ <div><label>Question types <small>(blank = all single correct)</small></label><input id="types" placeholder="S 1-8, M 9-12, N 13-20"></div></div>
+ <small>S = single correct, M = multiple correct, N = numerical. Numbers are question positions in this test.</small>
+ <label>Answer key in order <small>(single: D or 4 · multiple: ACD · numerical: 12.5)</small></label>
+ <textarea id="key" rows="3" placeholder="D C A C A A C B C C D C B A"></textarea>
+ <div class="g2"><div><label>Timer</label><select id="mode"><option value="t">Total time (minutes)</option><option value="q">Minutes per question</option></select></div>
+ <div><label>Minutes</label><input id="mins" type="number" step="0.5" value="60"></div></div>
+ <div class="g2"><div><label>Marks for correct</label><input id="mp" type="number" value="4"></div><div><label>Marks lost for wrong</label><input id="mn" type="number" value="4"></div></div>
+ <p id="msg" class="no"></p><button class="pri" onclick="begin()">Read PDF and start</button></div>
+ ${hist().length?'':'<div class="card" style="border-color:var(--pr)"><b>Coming back?</b> If you saved a data file earlier, <button onclick="$(\'#imp\').click()">load it now</button> to see your past attempts.</div>'}
+ <div class="card"><h3 style="margin-top:0">Your data</h3><small>Your attempts are stored in this browser only. Download a backup file and load it again on any device, or after clearing the browser.</small><div class="bar"><button onclick="dl()">Download my data</button><button onclick="$('#imp').click()">Load saved data</button><input type="file" id="imp" accept=".json" hidden onchange="imp(this)"></div><p id="dmsg"></p></div>
+ ${h?`<div class="card"><h3 style="margin-top:0">Past attempts</h3><table><tr><th>Test</th><th>Date</th><th>Score</th><th>Right / Wrong / Skipped</th><th>Accuracy</th><th>Time</th></tr>${h}</table></div>`:''}`;
+}
+const msg=t=>{const m=$('#msg');if(m)m.textContent=t};
+function pp(s){const r=[];s.split(',').forEach(p=>{const m=p.trim().match(/^(\d+)(?:\s*-\s*(\d+))?$/);if(m)for(let i=+m[1];i<=+(m[2]||m[1]);i++)r.push(i)});return r}
+
+const pdfReady=()=>window.pdfjsLib?Promise.resolve():new Promise((ok,no)=>{addEventListener('pdfready',ok,{once:true});setTimeout(()=>no(new Error('the PDF reader did not load - open the website over https, not as a local file')),10000)});
+async function extract(file,pages){
+ await pdfReady();
+ const pdf=await pdfjsLib.getDocument({data:await file.arrayBuffer()}).promise,out=[];
+ for(const p of pages){if(p>pdf.numPages)continue;msg('Reading page '+p+'…');
+  const pg=await pdf.getPage(p),vp=pg.getViewport({scale:2}),cv=document.createElement('canvas');
+  cv.width=vp.width;cv.height=vp.height;const cx=cv.getContext('2d',{willReadFrequently:true});
+  await pg.render({canvasContext:cx,viewport:vp}).promise;
+  const tc=await pg.getTextContent(),W=cv.width,H=cv.height,M=[];
+  const I=tc.items.filter(it=>(it.str||'').trim()).map(it=>{const[x,y]=vp.convertToViewportPoint(it.transform[4],it.transform[5]);return{s:it.str.trim(),x,y,h:it.height}});
+  for(const{s,x,y,h}of I){const top=y-(h||9)*2*.9-1;
+   if(x<W*.11&&(/^\d{1,2}\.(\s|$)/.test(s)||(/^\d{1,2}$/.test(s)&&I.some(o=>o.s=='.'&&Math.abs(o.y-y)<3&&o.x>x&&o.x-x<40))))M.push({t:'q',y:top});
+   else if(/^(SECTION|EXERCISE)\b/i.test(s))M.push({t:'b',y:top});
+   else if(x<W*.15&&/^(Comprehension|Paragraph for|Match the column)/.test(s))M.push({t:'c',y:top})}
+  M.sort((a,b)=>a.y-b.y);
+  const top0=.095*H,bot=.925*H;
+  const seg=(q,a,b)=>{a=Math.max(0,Math.floor(a-3));b=Math.min(H,Math.floor(b));const h=b-a;if(h<8)return;
+   const d=cx.getImageData(0,a,W,h).data;let f=-1,l=-1;
+   for(let r=0;r<h;r++)for(let c=Math.floor(W*.06);c<W*.96;c+=3){const i=(r*W+c)*4;if(d[i]+d[i+1]+d[i+2]<390){if(f<0)f=r;l=r;break}}
+   if(f<0)return;const y0=Math.max(0,f-6),y1=Math.min(h,l+8),x0=Math.floor(W*.06),x1=Math.floor(W*.96);
+   const c2=document.createElement('canvas');c2.width=x1-x0;c2.height=y1-y0;c2.getContext('2d').drawImage(cv,x0,a+y0,x1-x0,y1-y0,0,0,x1-x0,y1-y0);q.segs.push(c2)};
+  if(out.length&&(!M.length||M[0].t!='b')){const e=M.length?M[0].y:bot;if(e-top0>.035*H)seg(out[out.length-1],top0,e)}
+  M.forEach((m,i)=>{if(m.t!='q')return;let s=m.y,j=i-1;while(j>=0&&M[j].t=='c'){s=M[j].y;j--}
+   const n=M.find((k,j)=>j>i&&k.y>m.y+6),q={segs:[]};out.push(q);seg(q,s,n?n.y:bot)});
+ }
+ return out.filter(q=>q.segs.length).map(q=>{const w=Math.max(...q.segs.map(c=>c.width)),h=q.segs.reduce((a,c)=>a+c.height+4,0),c=document.createElement('canvas');
+  c.width=w;c.height=h;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,w,h);let y=0;q.segs.forEach(s=>{x.drawImage(s,0,y);y+=s.height+4});return c.toDataURL('image/jpeg',.85)})
+}
+
+async function begin(){try{await begin0()}catch(e){msg('Error: '+(e&&e.message||e));console.error(e)}}
+window.addEventListener('unhandledrejection',e=>msg('Error: '+(e.reason&&e.reason.message||e.reason)));
+async function begin0(){
+ const f=$('#file').files[0],pages=pp($('#pages').value);
+ if(!f)return msg('Choose a PDF file first.');if(!pages.length)return msg('Enter the question pages, for example 2-3.');
+ let imgs;try{imgs=await extract(f,pages)}catch(e){return msg('Could not read the PDF: '+e.message+'.')}
+ if(!imgs.length)return msg('No questions found on those pages. Check the page numbers.');
+ const toks=$('#key').value.split(/[\s,;]+/).filter(Boolean),n=toks.length?Math.min(imgs.length,toks.length):imgs.length;
+ msg('Found '+imgs.length+' questions and '+toks.length+' answers. Building test with '+n+' questions…');
+ const ty=Array(n).fill('S');$('#types').value.replace(/([SMN])\s*:?\s*(\d+)(?:\s*-\s*(\d+))?/gi,(_,t,a,b)=>{for(let i=+a;i<=+(b||a);i++)if(i<=n)ty[i-1]=t.toUpperCase()});
+ await new Promise(r=>setTimeout(r,50));
+ const q=imgs.slice(0,n).map((img,i)=>{let a=(toks[i]||'').toUpperCase();
+  if(ty[i]!='N')a=a.replace(/[1-4]/g,d=>O[d-1]);
+  if(ty[i]=='M')a=[...new Set(a.replace(/[^A-D]/g,''))].sort().join('');
+  return{img,t:ty[i],a}});
+ const mins=+$('#mins').value||60,tot=($('#mode').value=='q'?mins*n:mins)*60;
+ S={name:$('#name').value||f.name,q,lab:$('#lab').value,mp:+$('#mp').value,mn:Math.abs(+$('#mn').value),
+  r:Array(n).fill(''),st:Array(n).fill(0),tm:Array(n).fill(0),cur:0,end:Date.now()+tot*1000,t0:Date.now(),tot};
+ S.st[0]=1;$('#tm').hidden=false;$('header h1').textContent=S.name;
+ iv=setInterval(()=>{const r=Math.ceil((S.end-Date.now())/1000);$('#tm').textContent='Time Left : '+fmt(Math.max(r,0));if(r<=0)finish()},500);
+ exam();
+}
+
+/* ---------- Exam ---------- */
+const L=o=>S.lab=='1'?O.indexOf(o)+1:o;
+const TY={S:'Single correct',M:'Multiple correct',N:'Numerical'};
+function exam(){
+ A.className='wrap full';
+ const q=S.q[S.cur],r=S.r[S.cur],n=S.q.length,c=[0,1,2,3,4].map(k=>S.st.filter(x=>x==k).length);
+ let a='';
+ if(q.t=='N')a=`<input id="num" readonly value="${r}" placeholder="Use numpad"><div class="key">${[7,8,9,'⌫',4,5,6,'C',1,2,3,'-',0,'.'].map(k=>`<button onclick="kp('${k}')">${k}</button>`).join('')}</div>`;
+ else a=`<div class="opts">${O.map(o=>`<button class="opt ${r.includes(o)?'on':''}" aria-pressed="${r.includes(o)}" onclick="pick('${o}')">${L(o)}</button>`).join('')}</div>`;
+ const sh=(k,t)=>`<span class="sh s${k}">${c[k]}</span>${t}`,lg=(k,t)=>`<span>${sh(k,t)}</span>`;
+ A.innerHTML=`<div class="ex"><div class="mainp"><div class="qinfo"><span>Question Type: <b>${TY[q.t]}</b></span><span>Marks for correct answer: <b class="ok">+${S.mp}</b> | Negative Marks: <b class="no">${S.mn}</b></span></div>
+ <div class="qno">Question No. ${S.cur+1} <small>of ${n}</small></div>
+ <img class="q" src="${q.img}" alt="Question ${S.cur+1}">
+ <div class="ans"><b>${q.t=='M'?'Select all correct options':q.t=='N'?'Enter Answer:':'Select one option:'}</b>${a}</div></div>
+ <aside class="side"><div class="lg">${lg(2,' Answered')}${lg(1,' Not Answered')}${lg(0,' Not Visited')}${lg(3,' Marked for Review')}<span style="grid-column:span 2">${sh(4,' Answered & Marked for Review (will be evaluated)')}</span></div>
+ <div class="sec">${S.name}</div><div class="ch">Choose a Question</div>
+ <div class="pal">${S.q.map((_,i)=>`<button class="p s${S.st[i]} ${i==S.cur?'cur':''}" onclick="go(${i})">${i+1}</button>`).join('')}</div>
+ <div style="text-align:center;margin:18px 0"><button class="subm" onclick="sub()">Submit</button></div></aside></div>
+ <div class="foot"><div><button onclick="mark()">Mark for Review &amp; Next</button> <button onclick="clr()">Clear Response</button> <button onclick="go(Math.max(S.cur-1,0))">Back</button></div><button onclick="go(Math.min(S.cur+1,${n-1}))">Save &amp; Next</button></div>`;
+ scrollTo(0,0);
+}
+const tick=()=>{S.tm[S.cur]+=(Date.now()-S.t0)/1000;S.t0=Date.now()};
+function go(i){tick();S.cur=i;if(!S.st[i])S.st[i]=1;exam()}
+function upd(){const i=S.cur,has=S.r[i]!=='',mk=S.st[i]>=3;S.st[i]=has?(mk?4:2):(mk?3:1);exam()}
+function pick(o){const q=S.q[S.cur];let r=S.r[S.cur];
+ if(q.t=='S')r=r==o?'':o;else r=(r.includes(o)?r.replace(o,''):r+o).split('').sort().join('');S.r[S.cur]=r;upd()}
+function kp(k){let r=S.r[S.cur];if(k=='C')r='';else if(k=='⌫')r=r.slice(0,-1);else if(k=='-'){r=r.startsWith('-')?r.slice(1):'-'+r}else if(k=='.'){if(!r.includes('.'))r+='.'}else r+=k;S.r[S.cur]=r;upd()}
+function clr(){S.r[S.cur]='';S.st[S.cur]=S.st[S.cur]>=3?3:1;exam()}
+function mark(){const i=S.cur;S.st[i]=S.r[i]!==''?4:3;go(Math.min(i+1,S.q.length-1))}
+function sub(){tick();const at=S.r.filter(x=>x!=='').length;
+ if(confirm('Attempted '+at+' of '+S.q.length+'. Unattempted: '+(S.q.length-at)+'. Submit now?'))finish()}
+
+/* ---------- Result ---------- */
+function ok(q,r){if(q.t=='N'){const v=parseFloat(q.a),x=parseFloat(r);return isNaN(v)?null:Math.abs(x-v)<=Math.max(.01,Math.abs(v)*.005)}
+ return !q.a?null:r==q.a}
+const show=(q,v)=>v===''?'-':q.t=='N'?v:v.split('').map(L).join(', ');
+function finish(){
+ if(!S||S.done)return;S.done=1;clearInterval(iv);tick();$('#tm').hidden=true;
+ const R=S.q.map((q,i)=>{const r=S.r[i],att=r!=='',c=att?ok(q,r):null;
+  return{i,att,c,m:!att||c===null?0:c?S.mp:-S.mn,t:S.tm[i],s:!att?'sk':c===null?'sk':c?'ok':'no'}});
+ const sc=R.reduce((a,x)=>a+x.m,0),mx=S.q.length*S.mp,co=R.filter(x=>x.att&&x.c===true),wr=R.filter(x=>x.att&&x.c===false),un=R.filter(x=>!x.att);
+ const sum=a=>a.reduce((s,x)=>s+x.t,0),used=sum(R),acc=co.length+wr.length?Math.round(100*co.length/(co.length+wr.length)):0;
+ const max=Math.max(sum(co),sum(wr),sum(un),1),bar=(l,a,cl)=>`<div style="margin:6px 0">${l}: <b>${fmt(sum(a))}</b> <small>(avg ${a.length?fmt(sum(a)/a.length):'0:00'} over ${a.length})</small><br><span class="tb" style="background:${cl};width:${Math.max(2,sum(a)/max*100)}%"></span></div>`;
+ const sl=R.slice().sort((a,b)=>b.t-a.t).slice(0,5);
+ const hs=hist();hs.push({id:Date.now(),ts:Date.now(),name:S.name,date:new Date().toLocaleString(),score:sc,max:mx,acc,time:Math.round(used),n:S.q.length,co:co.length,wr:wr.length,un:un.length,qs:S.q.map((q,i)=>[q.t,S.r[i],q.a,Math.round(S.tm[i]),R[i].m])});ls('jt_hist',JSON.stringify(hs.slice(-300)));
+ A.innerHTML=`<div class="card"><h2 style="margin:0 0 10px">${S.name}</h2><div class="stats">
+ <div class="stat"><small>Score</small><b>${sc} / ${mx}</b></div><div class="stat"><small>Correct</small><b class="ok">${co.length}</b></div>
+ <div class="stat"><small>Incorrect</small><b class="no">${wr.length}</b></div><div class="stat"><small>Unattempted</small><b>${un.length}</b></div>
+ <div class="stat"><small>Accuracy</small><b>${acc}%</b></div><div class="stat"><small>Time used</small><b>${fmt(used)} / ${fmt(S.tot)}</b></div></div></div>
+ <div class="g2"><div class="card"><h3 style="margin-top:0">Time by result</h3>${bar('Correct',co,'var(--an)')}${bar('Incorrect',wr,'var(--na)')}${bar('Unattempted',un,'var(--mu)')}</div>
+ <div class="card"><h3 style="margin-top:0">Slowest questions</h3>${sl.map(x=>`Q${x.i+1}: <b>${fmt(x.t)}</b> <span class="${x.s}">${x.att?(x.c===null?'ungraded':x.c?'correct':'incorrect'):'unattempted'}</span><br>`).join('')}</div></div>
+ <div class="card"><h3 style="margin-top:0">Review <small>(click a row to see the question)</small></h3><div class="bar" style="margin:0 0 8px"><button onclick="fl('')">All</button><button onclick="fl('ok')">Correct</button><button onclick="fl('no')">Incorrect</button><button onclick="fl('sk')">Unattempted</button></div>
+ <div style="overflow-x:auto"><table><tr><th>Q</th><th>Type</th><th>Your answer</th><th>Correct</th><th>Result</th><th>Marks</th><th>Time</th></tr>
+ ${R.map(x=>{const q=S.q[x.i];return`<tr class="r ${x.s}f" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden"><td>${x.i+1}</td><td>${q.t}</td><td>${show(q,S.r[x.i])}</td><td>${q.a?show(q,q.a):'?'}</td><td class="${x.s}">${x.att?(x.c===null?'Ungraded':x.c?'Correct':'Incorrect'):'Unattempted'}</td><td>${x.m}</td><td>${fmt(x.t)}</td></tr><tr hidden class="${x.s}f"><td colspan="7"><img class="q" style="max-width:100%;background:#fff" src="${q.img}"></td></tr>`}).join('')}</table></div>
+ <div class="bar"><button class="pri" onclick="setup()">New test</button><button onclick="dl()">Download my data</button></div></div>`;
+ scrollTo(0,0);
+}
+function fl(c){document.querySelectorAll('tr.r').forEach(r=>{const m=!c||r.classList.contains(c+'f');r.style.display=m?'':'none';r.nextElementSibling.hidden=true;if(!m)r.nextElementSibling.style.display='none';else r.nextElementSibling.style.display=''})}
+function dl(){const b=new Blob([JSON.stringify({app:'jee-cbt',v:1,hist:hist()})],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='jee-cbt-data-'+new Date().toISOString().slice(0,10)+'.json';a.click()}
+async function imp(i){const f=i.files[0];if(!f)return;let t;
+ try{const d=JSON.parse(await f.text());if(!Array.isArray(d.hist))throw 0;const cur=hist(),k=x=>x.id||x.date,ids=new Set(cur.map(k)),add=d.hist.filter(x=>!ids.has(k(x)));
+  ls('jt_hist',JSON.stringify(cur.concat(add).sort((a,b)=>(a.ts||0)-(b.ts||0))));t='Loaded '+add.length+' new attempt(s).'}catch(e){t='That file is not a JEE CBT data file.'}
+ setup();$('#dmsg').textContent=t}
+setup();
+</script></body></html>
